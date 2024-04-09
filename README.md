@@ -41,14 +41,7 @@
   ```
   sudo touch /home/pam.operator/.ssh/authorized_keys
   ```
-  Sinh ra cặp khóa (key pair) để dùng xác thực.
-  ```
-  ssh-keygen -t rsa -b 4096
-  ```
-  Mở xem public key của bạn
-  ```
-  cat ~/.ssh/id_rsa.pub
-  ```
+  Bạn sẽ được admin gửi cho khóa của PAM theo dạng public key.
   Sao chép toàn bộ nội dung khóa công khai được hiển thị trên terminal.
   Tiếp theo, thêm khóa công khai vào tệp tin authorized_keys của người dùng "pam.operator".
   Mở tệp tin authorized_keys để chỉnh sửa:
