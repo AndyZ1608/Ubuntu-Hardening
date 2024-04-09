@@ -1,4 +1,4 @@
-<Bảo mật SSH cho server Linux>
+**Bảo mật SSH cho server Linux**
 
 1. Limit hosts.allow và hosts.deny SSHD chỉ vào từ PAM
 Config vào 2 file /etc/hosts.deny và /etc/hosts.allow , ví dụ:
@@ -33,3 +33,19 @@ PermitRootLogin no #Không cho truy cập bằng tài khoản root
 sudo adduser --force-badname pam.operator
 ```
 Nhập password cùng các thông tin cho user
+Tiếp theo, thêm khóa công khai SSH cho người dùng "pam.operator". Đầu tiên, hãy tạo một thư mục .ssh trong thư mục home của người dùng bằng lệnh:
+```
+sudo mkdir /home/pam.operator/.ssh
+```
+Bây giờ, hãy tạo một tệp tin mới có tên authorized_keys trong thư mục .ssh:
+```
+sudo touch /home/pam.operator/.ssh/authorized_keys
+```
+Sinh ra cặp khóa (key pair) để dùng xác thực. Chạy câu lệnh sau ở bất kỳ đâu:
+```
+ssh-keygen -t rsa -P '' -f <path>/mykey
+```
+Mở tệp tin authorized_keys để chỉnh sửa:
+```
+sudo nano /home/pam.operator/.ssh/authorized_keys
+```
