@@ -28,6 +28,14 @@
   PubkeyAuthentication yes
   PermitRootLogin no 
   ```
+  ```
+  Match User pam.operator
+    AllowTcpForwarding no
+    X11Forwarding no
+    AllowAgentForwarding no
+    PermitTTY no
+    ForceCommand echo "This account can only be used for SSH tunneling."
+ ```
 3. Tạo normal user pam.operator  và add ssh public key cho user pam.operator
   ```
   sudo adduser --force-badname pam.operator
