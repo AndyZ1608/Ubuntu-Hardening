@@ -27,15 +27,10 @@
   ChallengeResponseAuthentication no 
   PermitEmptyPasswords no 
   PubkeyAuthentication yes
-  PermitRootLogin no 
+  PermitRootLogin no
+  AllowUsers pam.operator
   ```
-  ```
-  Match User pam.operator
-    AllowUsers pam.operator
-
-  Match all
-    DenyUsers *
-  ```
+  
 3. Tạo normal user pam.operator  và add ssh public key cho user pam.operator
   ```
   sudo adduser --force-badname pam.operator
