@@ -10,9 +10,10 @@ vim /etc/hosts.deny
 sshd : ALL
 ```
 - file /etc/hosts.allow : chỉ cho phép truy cập với PAM
-'''
+```
 vim /etc/hosts.allow
-'''
+```
+```
 sshd : "IP of PAM"
-
+```
 2. 
