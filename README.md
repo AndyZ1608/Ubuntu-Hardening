@@ -35,6 +35,16 @@
     ```
     sudo adduser --force-badname pam.operator
     ```
+    ```
+    sudo visudo
+    ```
+    Ở phần 
+    `# User privilege specification
+        root    ALL=(ALL:ALL) ALL    `
+   Thêm user vào
+   ```
+   pam.operator    ALL=(ALL:ALL) ALL
+   ```
     Nhập password cùng các thông tin cho user
     Tiếp theo, thêm khóa công khai SSH cho người dùng "pam.operator". Đầu tiên, hãy tạo một thư mục .ssh trong thư mục home của người dùng bằng lệnh:
     ```
@@ -61,7 +71,7 @@
     sudo chmod 700 /home/pam.operator/.ssh
     sudo chmod 600 /home/pam.operator/.ssh/authorized_keys
     ```
-4. Đổi pass fciadmin, root, pam.operator về 1 password mới
+5. Đổi pass fciadmin, root, pam.operator về 1 password mới
    ```
    sudo passwd fciadmin
    ```
@@ -71,7 +81,7 @@
    ```
    sudo passwd root
    ```
-5. List toàn bộ account local
+6. List toàn bộ account local
    Sử dụng lệnh sau để liệt kê toàn bộ tài khoản người dùng:
    ```
    cut -d: -f1 /etc/passwd | awk '{print $0}'
