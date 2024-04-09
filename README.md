@@ -21,6 +21,7 @@
   ```
   nano /etc/ssh/sshd_config
   ```
+  Thêm vào cuối dòng
   ```
   PasswordAuthentication no 
   ChallengeResponseAuthentication no 
