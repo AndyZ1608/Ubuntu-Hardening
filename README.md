@@ -6,6 +6,9 @@ Config vào 2 file /etc/hosts.deny và /etc/hosts.allow , ví dụ:
 '''
 vim /etc/hosts.deny
 '''
+```
+#1.Tiêu đề cấp 1
+```
 sshd : ALL
 - file /etc/hosts.allow : chỉ cho phép truy cập với PAM
 '''
