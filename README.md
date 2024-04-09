@@ -25,6 +25,11 @@ vim /etc/ssh/sshd_config
 PasswordAuthentication no # ko sử dụng authen bằng password
 ChallengeResponseAuthentication no # ko sử dụng authen bằng password
 PermitEmptyPasswords no # ko cho phép truy cập bằng password rỗng (đối với user ko setup pass)
-RSAAuthentication no # Không authen RSA（version 1 thôi）
 PubkeyAuthentication yes # sử dụng public key để authen
+PermitRootLogin no #Không cho truy cập bằng tài khoản root
 ```
+3. Tạo normal user pam.operator  và add ssh public key cho user pam.operator
+```
+sudo adduser --force-badname pam.operator
+```
+Nhập password cùng các thông tin cho user
