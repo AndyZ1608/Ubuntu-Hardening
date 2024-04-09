@@ -68,7 +68,7 @@
    ```
    sudo passwd root
    ```
-5. List toàn bộ account local
+   5. List toàn bộ account local
    Sử dụng lệnh sau để liệt kê toàn bộ tài khoản người dùng:
    ```
    cut -d: -f1 /etc/passwd | awk '{print $0}'
