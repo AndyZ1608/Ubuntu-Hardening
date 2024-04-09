@@ -22,11 +22,11 @@
   nano /etc/ssh/sshd_config
   ```
   ```
-  PasswordAuthentication no #ko sử dụng authen bằng password
-  ChallengeResponseAuthentication no #ko sử dụng authen bằng password
-  PermitEmptyPasswords no #ko cho phép truy cập bằng password rỗng (đối với user ko setup pass)
-  PubkeyAuthentication yes #sử dụng public key để authen
-  PermitRootLogin no #Không cho truy cập bằng tài khoản root
+  PasswordAuthentication no 
+  ChallengeResponseAuthentication no 
+  PermitEmptyPasswords no 
+  PubkeyAuthentication yes
+  PermitRootLogin no 
   ```
 3. Tạo normal user pam.operator  và add ssh public key cho user pam.operator
   ```
