@@ -41,11 +41,18 @@ Bây giờ, hãy tạo một tệp tin mới có tên authorized_keys trong thư
 ```
 sudo touch /home/pam.operator/.ssh/authorized_keys
 ```
-Sinh ra cặp khóa (key pair) để dùng xác thực. Chạy câu lệnh sau ở bất kỳ đâu:
+Sinh ra cặp khóa (key pair) để dùng xác thực.
 ```
-ssh-keygen -t rsa -P '' -f <path>/mykey
+ssh-keygen -t rsa -b 4096
 ```
+Mở xem public key của bạn
+```
+cat ~/.ssh/id_rsa.pub
+```
+Sao chép toàn bộ nội dung khóa công khai được hiển thị trên terminal.
+Tiếp theo, thêm khóa công khai vào tệp tin authorized_keys của người dùng "pam.operator".
 Mở tệp tin authorized_keys để chỉnh sửa:
 ```
 sudo nano /home/pam.operator/.ssh/authorized_keys
 ```
+Trong trình soạn thảo nano, dán nội dung khóa công khai vào cuối tệp tin authorized_keys. Sau khi dán xong, nhấn Ctrl + X để thoát, sau đó nhấn Y và Enter để lưu thay đổi.
