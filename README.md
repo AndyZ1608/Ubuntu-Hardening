@@ -66,4 +66,17 @@
   sudo chmod 600 /home/pam.operator/.ssh/authorized_keys
   ```
 4. Đổi pass fciadmin, root, pam.operator về 1 password mới
-   
+   ```
+   sudo passwd fciadmin
+   ```
+   ```
+   sudo passwd pam.operator
+   ```
+   ```
+   sudo passwd root
+   ```
+5. List toàn bộ account local
+   Sử dụng lệnh sau để liệt kê toàn bộ tài khoản người dùng:
+   ```
+   cut -d: -f1 /etc/passwd | awk '{print $0}'
+   ```
