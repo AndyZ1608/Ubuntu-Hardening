@@ -71,6 +71,10 @@
     sudo chmod 700 /home/pam.operator/.ssh
     sudo chmod 600 /home/pam.operator/.ssh/authorized_keys
     ```
+    Khởi động lại SSH
+   ```
+   sudo systemctl restart ssh
+   ```
 5. Đổi pass fciadmin, root, pam.operator về 1 password mới
    ```
    sudo passwd fciadmin
